@@ -1,0 +1,7 @@
+sylius_resource:
+    resources:
+        bitbag_plugin_wishlist.wishlist:
+            driver: doctrine/orm
+            classes:
+                model: BitBag\SyliusWishlistPlugin\Entity\Wishlist
+                repository: BitBag\SyliusWishlistPlugin\Repository\WishlistRepository

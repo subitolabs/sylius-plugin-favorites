@@ -1,0 +1,31 @@
+sylius_grid:
+    grids:
+        bitbag_wishlist:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: BitBag\SyliusWishlistPlugin\Entity\Wishlist
+            fields:
+                customer:
+                    type: twig
+                    label: customer
+                    path: shop_user
+                    options:
+                        template: "@BitBagSyliusWishlistPlugin/Admin/FieldCustomer.html.twig"
+                name:
+                    type: string
+                    label: Title
+                    sortable: ~
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete
+            filters:
+                code:
+                    type: string
+                    label: monsieurbiz_menu.ui.code
