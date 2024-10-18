@@ -1,0 +1,53 @@
+{% extends '@SyliusAdmin/layout.html.twig' %}
+
+{% block title %}{{ 'bitbag_sylius_wishlist_plugin.ui.wishlist'|trans }} | {{ wishlist.name }}{% endblock %}
+
+{% block content %}
+    <div class="ui stackable two column grid">
+        <div class="column">
+            {% import '@SyliusUi/Macro/headers.html.twig' as headers %}
+
+            {% set header = "toto" %}
+            {% set customer = wishlist.shopUser.customer %}
+
+            {{ headers.default(header|trans, 'heart', configuration.vars.subheader|default('')|trans) }}
+
+            {% import '@SyliusAdmin/Macro/breadcrumb.html.twig' as breadcrumb %}
+
+            {% set breadcrumb = configuration.vars.breadcrumb|default(metadata.applicationName~'.ui.'~metadata.pluralName) %}
+
+            {% set breadcrumbs = [
+                { label: 'sylius.ui.administration'|trans, url: path('sylius_admin_dashboard') },
+                { label: 'bitbag_sylius_wishlist_plugin.ui.wishlist'|trans, url: path('bitbag_plugin_wishlist_admin_wishlist_index') },
+                { label: wishlist.name },
+            ]
+            %}
+
+            {{ breadcrumb.crumble(breadcrumbs) }}
+
+        </div>
+    </div>
+
+    <div class="middle aligned column">
+        {% include configuration.vars.templates.toolbar|default('@SyliusAdmin/Crud/_toolbar.html.twig') ignore missing %}
+
+        <div class="ui stackable grid sticky-container">
+            <div class="twelve wide column sticky-column">
+                <div class="ui segment">
+                    <h2>{{ wishlist.name }}</h2>
+                    <p>{{ wishlist.products.count }} {{ 'sylius.ui.products' | trans }}</p>
+                    <div class="ui three odd doubling cards">
+                        {% for product in wishlist.products %}
+                        {% include "@SyliusShop/Product/Box/_content.html.twig" %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="four wide column">
+                {% include '@SyliusAdmin/Customer/_info.html.twig' %}
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

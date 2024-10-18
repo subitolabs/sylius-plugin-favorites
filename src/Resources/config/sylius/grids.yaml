@@ -11,21 +11,31 @@ sylius_grid:
                     label: customer
                     path: shop_user
                     options:
-                        template: "@BitBagSyliusWishlistPlugin/Admin/FieldCustomer.html.twig"
+                        template: "@BitBagSyliusWishlistPlugin/Admin/fieldCustomer.html.twig"
                 name:
                     type: string
                     label: Title
                     sortable: ~
+                products:
+                    type: string
+                    label: Products
+                    path: products.count
             actions:
                 main:
                     create:
                         type: create
                 item:
+                    show:
+                        label: sylius.ui.details
+                        type: show
                     update:
                         type: update
                     delete:
                         type: delete
+                bulk:
+                    delete:
+                        type: delete
             filters:
-                code:
+                shop_user:
                     type: string
-                    label: monsieurbiz_menu.ui.code
+                    label: customer

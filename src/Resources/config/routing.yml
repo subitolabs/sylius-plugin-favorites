@@ -9,17 +9,6 @@ bitbag_sylius_wishlist_plugin_shop:
   requirements:
     _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
 
-bitbag_sylius_wishlist_plugin_admin:
-  resource: |
-    alias: bitbag_plugin_wishlist.wishlist
-    section: admin
-    templates: "@SyliusAdmin\\Crud"
-    redirect: update
-    grid: bitbag_wishlist
-    vars:
-        all:
-            subheader: app.ui.supplier
-        index:
-            icon: 'file image outline'
-  type: sylius.resource
+bitbag_sylius_wishlist_plugin_admin_routes:
+  resource: "routing/admin.yml"
   prefix: /admin

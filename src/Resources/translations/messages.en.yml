@@ -67,3 +67,4 @@ bitbag_sylius_wishlist_plugin:
         wishlist_modal_remove_perform: 'perform'
         wishlist_modal_remove_cancel: 'cancel'
         wishlist_modal_placeholder: 'My wishlists...'
+        admin.teasing: Let users save products as favorite
