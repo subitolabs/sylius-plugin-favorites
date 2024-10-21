@@ -9,3 +9,6 @@ bitbag_sylius_wishlist_plugin_shop:
   requirements:
     _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
 
+bitbag_sylius_wishlist_plugin_admin_routes:
+  resource: "routing/admin.yml"
+  prefix: /admin

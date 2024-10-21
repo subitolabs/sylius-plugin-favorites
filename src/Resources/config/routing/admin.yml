@@ -1,0 +1,25 @@
+bitbag_sylius_wishlist_plugin_admin:
+  resource: |
+    alias: bitbag_plugin_wishlist.wishlist
+    section: admin
+    templates: "@BitBagSyliusWishlistPlugin\\Admin"
+    redirect: update
+    grid: bitbag_wishlist
+    vars:
+        all:
+            subheader: bitbag_sylius_wishlist_plugin.ui.admin.teasing
+        index:
+            header: bitbag_sylius_wishlist_plugin.ui.wishlist
+            breadcrumb: bitbag_sylius_wishlist_plugin.ui.wishlist
+            icon: 'file heart outline'
+  type: sylius.resource
+
+#bitbag_plugin_wishlist_admin_wishlist_show:
+#  path: /wishlists/{id}
+#  methods: [GET]
+#  defaults:
+#    _controller: sylius.controller.product::showAction
+#    _sylius:
+#      section: admin
+#      permission: true
+#      template: "@BitBagSyliusWishlistPlugin/Admin/show.html.twig"

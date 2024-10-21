@@ -20,6 +20,11 @@
             <tag name="kernel.event_subscriber"/>
         </service>
 
+        <service id="bitbag_sylius_wishlist_plugin.event_subscriber.admin_menu_subscriber" class="BitBag\SyliusWishlistPlugin\EventSubscriber\AdminMenuSubscriber">
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
         <service id="bitbag_sylius_wishlist_plugin.custom_factory.dom_pdf_options" class="BitBag\SyliusWishlistPlugin\Factory\DomPdfOptionsFactory"/>
     </services>
 </container>
